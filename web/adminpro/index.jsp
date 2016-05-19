@@ -61,7 +61,15 @@ th {
                 </button>
             
             </div><br>
-        
+            <%
+      /*           if(session.getAttribute("admin")==null || session.getAttribute("admin") == "" || session.getAttribute("admin") == " " ) 
+          { 
+              response.sendRedirect("caught.jsp"); 
+          } 
+          else 
+          { */
+                String img = "userimages/"+session.getAttribute("admin").toString()+".jpg";
+                %>
 
 		<!-- Header -->
 			<div id="header">
@@ -70,7 +78,7 @@ th {
 
 					<!-- Logo -->
 					<div id="logo">
-							<span class="image avatar48"><img src="images/contact.png" alt="" /></span>
+                                            <span class="image avatar48"><img src=<%=img%> alt="" /></span>
 							<h1 id="title">Admin</h1> 
 							<p>Event Management System</p>
 						</div>
@@ -82,8 +90,9 @@ th {
 								<li ><a href="#top" id="top-link" class="skel-layers-ignoreHref"><span class="icon fa-home">Profile</span></a></li>
 <li><a href="eventc/create_evt.jsp" id="portfolio-link" class="skel-layers-ignoreHref" target="_blank"><span class="icon fa-plus">Create Event</span></a></li>
 <li><a href="eventc/del_evt.html" id="about-link" class="skel-layers-ignoreHref" target="_blank"><span class="icon fa-minus">Delete Event</span></a></li>
-<li><a href="#contact" id="contact-link" class="skel-layers-ignoreHref" target="_blank"><span class="icon fa-book">Appearence</span></a></li>
+<li><a href="../indexeditor.jsp" id="contact-link" class="skel-layers-ignoreHref" target="_blank"><span class="icon fa-book">Appearence</span></a></li>
 <li><a href="./usr_disp.jsp" id="contact-link" class="skel-layers-ignoreHref"><span class="icon fa-user">Users</span></a></li>
+<li><a href="#profile" id="contact-link" class="skel-layers-ignoreHref"><span class="icon fa-user">Change Profile Picture</span></a></li>
                                                                 
 							</ul>
 						</nav>
@@ -164,6 +173,23 @@ th {
                                                     <font color="white"> Can view and manage USERS.....</font>
 						</div>
 					</section>
+                                  <section id="profile" class="four">
+						<div class="container1">
+
+							<header>
+								<h2>Change Profile Picture</h2>
+							</header>
+                                                    <font color="white"> <h3>File Upload:</h3>
+Select a file to upload: <br />
+<form action="../filehandler/uploadimage2.jsp" method="post"
+                        enctype="multipart/form-data">
+<input type="file" name="file"  />
+<br />
+<input type="submit" value="Upload File" />
+</form>
+</font>
+						</div>
+					</section>
 
 			</div>
 
@@ -178,7 +204,8 @@ th {
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
 
-       
+                        <%//}
+                 %>
         
 </body>
 </html>

@@ -18,6 +18,7 @@ String passd1=request.getParameter("passwd");
              if(getdpass.equals(passd1))
              {
                 response.sendRedirect("adminpro/");
+                session.setAttribute("admin", "admin");
              }
              else
              {

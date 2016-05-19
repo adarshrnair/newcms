@@ -202,7 +202,7 @@ ps1=con.prepareStatement("SELECT * FROM CONTENT WHERE PAGE='5' ");
 		<meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
         <title> kalotsavam</title>
-
+<!--
 	<script>
 function title1()
 {
@@ -260,7 +260,7 @@ function contentimage1()
 	window.location.assign("titleeditor/page1/image1.html");
 }
 </script>
-
+-->
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
         <meta name="description" content="CSS-only Responsive Layout with Smooth Transitions" />
@@ -280,12 +280,7 @@ function contentimage1()
     
     
     <% 
-          if(session.getAttribute("admin")==null || session.getAttribute("admin") == "" || session.getAttribute("admin") == " " ) 
-          { 
-              response.sendRedirect("caught.jsp"); 
-          } 
-          else 
-          { 
+         
                
    %> 
 
@@ -362,7 +357,7 @@ function contentimage1()
 	</body>
                        
 <% 
-         } 
+         
 %> 
 
 </html>
