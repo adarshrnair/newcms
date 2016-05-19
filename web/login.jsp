@@ -13,15 +13,21 @@ String passd1=request.getParameter("passwd");
              {
              
              getdpass= rs1.getString(2).toString();
-            
-         }
-             if(getdpass.equals(passd1))
+             if(rs1.getString(3).toString().equals("A"))
              {
-                response.sendRedirect("adminpro/");
+              response.sendRedirect("adminpro/");
                 session.setAttribute("admin", "admin");
+             }
+             else if(rs1.getString(3).toString().equals("U"))
+             {
+              response.sendRedirect("adminpro/userpro.jsp");
+                session.setAttribute("user", "user");
              }
              else
              {
             response.sendRedirect("index.jsp");
             }
+         }
+            
+             
              %>

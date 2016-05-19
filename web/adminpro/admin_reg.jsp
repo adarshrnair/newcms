@@ -118,7 +118,7 @@ String to=email;//change accordingly
    message.setFrom(new InternetAddress("r.adarsh1994@gmail.com"));//change accordingly  
    message.addRecipient(Message.RecipientType.TO,new InternetAddress(to));  
    message.setSubject("REGISTERED");  
-   String msg = "You are now made a member of site protected by Vajravyuha. You Username is "+rno+" and password is "+pass+". Your chest no : "+val+"";
+   String msg = "You are now made a member of site protected by Vajravyuha. You Username is "+rno+" and password is "+pass+". Your chest no : "+val+" Please change password after login";
    message.setText(msg);  
      
    //send message  

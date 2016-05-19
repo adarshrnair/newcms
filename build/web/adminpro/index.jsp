@@ -78,7 +78,7 @@ th {
 
 					<!-- Logo -->
 					<div id="logo">
-                                            <span class="image avatar48"><img src=<%=img%> alt="" /></span>
+                                            <span class="image avatar48"><img src=<%=img%> alt=" " /></span>
 							<h1 id="title">Admin</h1> 
 							<p>Event Management System</p>
 						</div>
@@ -91,8 +91,10 @@ th {
 <li><a href="eventc/create_evt.jsp" id="portfolio-link" class="skel-layers-ignoreHref" target="_blank"><span class="icon fa-plus">Create Event</span></a></li>
 <li><a href="eventc/del_evt.html" id="about-link" class="skel-layers-ignoreHref" target="_blank"><span class="icon fa-minus">Delete Event</span></a></li>
 <li><a href="../indexeditor.jsp" id="contact-link" class="skel-layers-ignoreHref" target="_blank"><span class="icon fa-book">Appearence</span></a></li>
-<li><a href="./usr_disp.jsp" id="contact-link" class="skel-layers-ignoreHref"><span class="icon fa-user">Users</span></a></li>
+<li><a href="usr_disp.jsp" id="contact-link" class="skel-layers-ignoreHref"><span class="icon fa-user">Users</span></a></li>
 <li><a href="#profile" id="contact-link" class="skel-layers-ignoreHref"><span class="icon fa-user">Change Profile Picture</span></a></li>
+<li><a href="user_reg.html" id="contact-link" class="skel-layers-ignoreHref"><span class="icon fa-user">Add User</span></a></li>
+<li><a href="admin_reg.html" id="contact-link" class="skel-layers-ignoreHref"><span class="icon fa-user">Add Admin</span></a></li>
                                                                 
 							</ul>
 						</nav>

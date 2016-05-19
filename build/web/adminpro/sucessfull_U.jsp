@@ -1,45 +1,63 @@
-<%@page import="java.lang.String"%>
+<%@page import="javax.mail.Transport"%>
+<%@page import="javax.mail.Message"%>
+<%@page import="javax.mail.MessagingException"%>
+
+
 <%@page import="java.sql.*"%>
+<%@page import="java.util.*"%>
+<%@page import="java.io.*"%>
+<%@page import="java.sql.*"%>
+<%@page import="java.util.*"%>
+<%@page import="javax.mail.*"%>
+<%@page import="javax.mail.internet.*"%>
+<%@page import="java.io.InputStreamReader"%>
+<%@page import="java.io.BufferedReader"%>
+<%@page import="java.io.PrintWriter"%>
+<%@page import="java.net.Socket"%>
+
 <%
 	
 Connection con=DriverManager.getConnection("jdbc:derby://localhost:1527/VAJRA", "superuser", "superuser");
-
+PreparedStatement ps2 = null;
 PreparedStatement ps = null;
-String fname="trial";
-String lname="trial";
-String rno="trial";
-String branch="trial";
-String email="trial";
-String phno="trial";
-String I=null;
-String II=null;
-String III=null;
-String IV=null;
-String V=null;
-String VI=null;
-String score="0";
-String uname= "trial";
-String pass= "trial";
-uname= request.getParameter("uname");
-pass= request.getParameter("password");
+String fname;
+String lname;
+String rno;
+String branch;
+String email;
+String phno;
+String chest;
+String score;
+
+/*String A="A";
+String B="B";
+String C="C";
+String D="D";
+String E="E";
+String F="E";
+String score="F";*/
+
 fname= request.getParameter("fname");
 lname= request.getParameter("lname");
 rno= request.getParameter("rno");
 branch= request.getParameter("branch");
 email= request.getParameter("email");
 phno= request.getParameter("phno");
-String val="0"; int va=0;
-String selectchest = "select MAX(CHEST) from SUPERUSER.USER_REG";
- ResultSet rs1=ps.executeQuery();
+chest= request.getParameter("chest");
+score= request.getParameter("score");
+int val=0;
+ps=con.prepareStatement("SELECT MAX(CHEST) FROM USER_REG");
+         //    ps.setString(1, uname1);
+      //preparedStmt.executeUpdate();
+             ResultSet rs1=ps.executeQuery();
              while(rs1.next())
              {
              
-             va= rs1.getInt(2);
-            
-        //    val=va+""; 
-            
+             val= Integer.parseInt(rs1.getString(1));
+            val=val+1;
          }
- String query =("Insert into USER_REG values(?,?,?,?,?,?,?,?)");
+
+ String query ="Insert into USER_REG values(?,?,?,?,?,?,?,?)";
  ps= con.prepareStatement(query);
         ps.setString(1, fname);
         ps.setString(2, lname);
@@ -47,22 +65,26 @@ String selectchest = "select MAX(CHEST) from SUPERUSER.USER_REG";
         ps.setString(4, branch);
         ps.setString(5, email);
         ps.setString(6, phno);
-        ps.setInt(7, va);
+        ps.setInt(7, val);
         ps.setInt(8, 0);
         
-        
-        
+        String AB = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    Random rnd = new Random();
+    
+   StringBuilder sb = new StringBuilder( 8 );
+   for( int i = 0; i < 8; i++ ) 
+      sb.append( AB.charAt( rnd.nextInt(AB.length()) ) );
+   String pass=sb.toString();
+ String query2 ="Insert into USERS values(?,?,?)";    
+  ps2= con.prepareStatement(query2);
+         ps2.setString(1, rno);
+        ps2.setString(2, pass);
+        ps2.setString(3, "U");
              
-       /* ps.executeUpdate();*/
+        ps2.executeUpdate();
         
         int i = ps.executeUpdate();
-        String query1 =("Insert into users values(?,?,?)");
-         ps= con.prepareStatement(query1);
-         ps.setString(1, uname);
-        ps.setString(2, pass);
-        ps.setString(3, "U");
-        int j = ps.executeUpdate();
-        if(i!=0 )
+        if(i!=0)
         {
             System.out.println("USER REGISTERED!!!");
         }
@@ -72,6 +94,42 @@ String selectchest = "select MAX(CHEST) from SUPERUSER.USER_REG";
             System.out.println("failed!!!");
         }
         
+String to=email;//change accordingly  
+  
+  //Get the session object  
+  Properties props = new Properties();  
+  props.put("mail.smtp.host", "smtp.gmail.com");  
+  props.put("mail.smtp.socketFactory.port", "465");  
+  props.put("mail.smtp.socketFactory.class",  
+            "javax.net.ssl.SSLSocketFactory");  
+  props.put("mail.smtp.auth", "true");  
+  props.put("mail.smtp.port", "465");  
+   
+  Session session1 = Session.getInstance(props,  
+   new javax.mail.Authenticator() {  
+   protected PasswordAuthentication getPasswordAuthentication() {  
+   return new PasswordAuthentication("r.adarsh1994@gmail.com","9744547214");//change accordingly  
+   }  
+  });  
+   
+  //compose message  
+  try {  
+   MimeMessage message = new MimeMessage(session1);  
+   message.setFrom(new InternetAddress("r.adarsh1994@gmail.com"));//change accordingly  
+   message.addRecipient(Message.RecipientType.TO,new InternetAddress(to));  
+   message.setSubject("REGISTERED");  
+   String msg = "You are now made a member of site protected by Vajravyuha. You Username is "+rno+" and password is "+pass+". Your chest no : "+val+"";
+   message.setText(msg);  
+     
+   //send message  
+  Transport.send(message);  
+  
+   System.out.println("message sent successfully");  
+   
+  } catch (MessagingException e) {throw new RuntimeException(e);}  
+            
+            
+            
 
         
 %>
@@ -258,7 +316,7 @@ mediumseagreen
             </h1>
             <br>
             <div id="login">
-            <form action="user-reg.jsp"> <input type='submit' value="click to register another user " ></form>
+            <form action="user_reg.html"> <input type='submit' value="click to register another user " ></form>
             
 
             </div>
@@ -272,7 +330,7 @@ mediumseagreen
         
         
         
-        
+        </div>
     </body>
     
     

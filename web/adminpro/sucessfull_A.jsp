@@ -79,7 +79,7 @@ ps=con.prepareStatement("SELECT MAX(CHEST) FROM USER_REG");
   ps2= con.prepareStatement(query2);
          ps2.setString(1, rno);
         ps2.setString(2, pass);
-        ps2.setString(3, "U");
+        ps2.setString(3, "A");
              
         ps2.executeUpdate();
         
@@ -118,7 +118,7 @@ String to=email;//change accordingly
    message.setFrom(new InternetAddress("r.adarsh1994@gmail.com"));//change accordingly  
    message.addRecipient(Message.RecipientType.TO,new InternetAddress(to));  
    message.setSubject("REGISTERED");  
-   String msg = "You are now made a member of site protected by Vajravyuha. You Username is "+rno+" and password is "+pass+". Your chest no : "+val+"";
+   String msg = "You are now made an Administrator of site protected by Vajravyuha. You Username is "+rno+" and password is "+pass+". Your chest no : "+val+"";
    message.setText(msg);  
      
    //send message  

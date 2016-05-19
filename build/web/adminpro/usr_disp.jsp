@@ -38,12 +38,12 @@ if(!rs.next()) {
 
 </tr>
 
-<tr><td><%rs.getString("FNAME"); %></td>
-    <td><%rs.getString("LNAME"); %></td>
-    <td><%rs.getString("RNO"); %></td>
-    <td><%rs.getString("BRANCH"); %></td>
-    <td><%rs.getString("EMAIL"); %></td>
-    <td><%rs.getString("PHNO");%></td></tr>
+<tr><td><%=rs.getString("FNAME") %></td>
+    <td><%=rs.getString("LNAME") %></td>
+    <td><%=rs.getString("RNO") %></td>
+    <td><%=rs.getString("BRANCH") %></td>
+    <td><%=rs.getString("EMAIL") %></td>
+    <td><%=rs.getString("PHNO")%></td></tr>
       
       
 
