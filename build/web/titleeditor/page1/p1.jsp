@@ -4,12 +4,12 @@
     
     
     <% 
-          if(session.getAttribute("admin")==null || session.getAttribute("admin") == "" || session.getAttribute("admin") == " " ) 
+    /*      if(session.getAttribute("admin")==null || session.getAttribute("admin") == "" || session.getAttribute("admin") == " " ) 
           { 
               response.sendRedirect("caught.jsp"); 
           } 
           else 
-          { 
+          { */
                
      %> 
 <%
@@ -49,7 +49,7 @@ response.sendRedirect("../../index.jsp");
 %>
     
     <%
-       }
+     //  }
        
     %>
 

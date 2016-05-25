@@ -281,7 +281,12 @@ function contentimage1()
     
     <% 
          
-               
+             /*    if(session.getAttribute("head")==null || session.getAttribute("head") == "" || session.getAttribute("head") == " " ) 
+          { 
+              response.sendRedirect("caught.jsp"); 
+          } 
+          else 
+         {*/
    %> 
 
     <body>
@@ -357,7 +362,7 @@ function contentimage1()
 	</body>
                        
 <% 
-         
+         //}
 %> 
 
 </html>

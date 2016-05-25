@@ -29,13 +29,13 @@ String phno;
 String chest;
 String score;
 
-/*String A="A";
+String A="A";
 String B="B";
 String C="C";
 String D="D";
 String E="E";
 String F="E";
-String score="F";*/
+/*String score="F";*/
 
 fname= request.getParameter("fname");
 lname= request.getParameter("lname");
@@ -45,6 +45,14 @@ email= request.getParameter("email");
 phno= request.getParameter("phno");
 chest= request.getParameter("chest");
 score= request.getParameter("score");
+A= request.getParameter("A");
+B= request.getParameter("B");
+C= request.getParameter("C");
+D= request.getParameter("D");
+E= request.getParameter("E");
+F= request.getParameter("F");
+
+
 int val=0;
 ps=con.prepareStatement("SELECT MAX(CHEST) FROM USER_REG");
          //    ps.setString(1, uname1);
@@ -57,7 +65,7 @@ ps=con.prepareStatement("SELECT MAX(CHEST) FROM USER_REG");
             val=val+1;
          }
 
- String query ="Insert into USER_REG values(?,?,?,?,?,?,?,?)";
+ String query ="Insert into USER_REG values(?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
  ps= con.prepareStatement(query);
         ps.setString(1, fname);
         ps.setString(2, lname);
@@ -67,6 +75,12 @@ ps=con.prepareStatement("SELECT MAX(CHEST) FROM USER_REG");
         ps.setString(6, phno);
         ps.setInt(7, val);
         ps.setInt(8, 0);
+        ps.setString(9, A);
+        ps.setString(10, B);
+        ps.setString(11, C);
+        ps.setString(12, D);
+        ps.setString(13, E);
+        ps.setString(14, F);
         
         String AB = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     Random rnd = new Random();
@@ -75,11 +89,12 @@ ps=con.prepareStatement("SELECT MAX(CHEST) FROM USER_REG");
    for( int i = 0; i < 8; i++ ) 
       sb.append( AB.charAt( rnd.nextInt(AB.length()) ) );
    String pass=sb.toString();
- String query2 ="Insert into USERS values(?,?,?)";    
+ String query2 ="Insert into USERS values(?,?,?,?)";    
   ps2= con.prepareStatement(query2);
          ps2.setString(1, rno);
         ps2.setString(2, pass);
         ps2.setString(3, "A");
+        ps2.setString(4, email);
              
         ps2.executeUpdate();
         

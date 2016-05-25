@@ -165,7 +165,7 @@ Connection con=DriverManager.getConnection("jdbc:derby://localhost:1527/VAJRA", 
             
                  <tr>
                  <td><%=getd%></td>
-                 <td><input type="radio"  name="dlt" value=<%=getd%> ></td>
+                 <td><input type="radio"  name="dlt" value=<%=getd%> > </td>
                  </tr>
              
              <%

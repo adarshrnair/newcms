@@ -43,7 +43,7 @@ if(!rs.next()) {
     <td><%=rs.getString("RNO") %></td>
     <td><%=rs.getString("BRANCH") %></td>
     <td><%=rs.getString("EMAIL") %></td>
-    <td><%=rs.getString("PHNO")%></td></tr>
+    <td><%=rs.getString("PHONE")%></td></tr>
       
       
 
@@ -61,7 +61,7 @@ if(!rs.next()) {
        </TABLE>
        <BR>
        <% 
-           } 
+            
        %>
        
 

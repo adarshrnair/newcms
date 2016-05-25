@@ -13,6 +13,9 @@ String m2;
 String p1;
 String p2;
 String p3;
+String w1;
+String w2;
+String w3;
 
 event_name= request.getParameter("event_name");
 m1= request.getParameter("m1");
@@ -20,10 +23,13 @@ m2= request.getParameter("m2");
 p1= request.getParameter("p1");
 p2= request.getParameter("p2");
 p3= request.getParameter("p3");
+w1= request.getParameter("w2");
+w2= request.getParameter("w3");
+w3= request.getParameter("w1");
 
 
 
- String query =("Insert into EVENTADD values(?,?,?,?,?,?)");
+ String query =("Insert into EVENTADD values(?,?,?,?,?,?,?,?,?)");
  ps= con.prepareStatement(query);
         ps.setString(1, event_name);
         ps.setString(2, m1);
@@ -31,6 +37,9 @@ p3= request.getParameter("p3");
         ps.setString(4, p1);
         ps.setString(5, p2);
         ps.setString(6, p3);
+        ps.setString(7, w3);
+        ps.setString(8, w2);
+        ps.setString(9, w1);
        /* ps.executeUpdate();*/
         
         int i = ps.executeUpdate();

@@ -8,12 +8,12 @@
     
     
      <% 
-          if(session.getAttribute("admin")==null || session.getAttribute("admin") == "" || session.getAttribute("admin") == " " ) 
+           if(session.getAttribute("head")==null || session.getAttribute("head") == "" || session.getAttribute("head") == " " ) 
           { 
               response.sendRedirect("caught.jsp"); 
           } 
           else 
-          { 
+         {
                
      %> 
         

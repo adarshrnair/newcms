@@ -1,8 +1,12 @@
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.Connection"%>
+<%@page import="java.sql.PreparedStatement"%>
 <!DOCTYPE html>
 <html >
   <head>
     <meta charset="UTF-8">
-    <title>Delete event</title>
+    <title>Join event</title>
     
     
     
@@ -125,7 +129,9 @@ body{
   </head>
 
   <body>
+      
      
+      
     <div class="body"></div>
 		<div class="grad"></div>
 		<div class="header">
@@ -133,12 +139,49 @@ body{
 		</div>
 		<br>
 		<div class="login"><br><br><br>
-            <form name="f1"action="groupevt_disp.html">
-                <input type="submit" value="Group Events"></form>
-            <form name="f2" action="soloevt_disp.html">
-                <input type="submit" value="Solo Events"></form>
-
-            
+                    <form name="f1" action="eventadd.jsp">
+      <table>
+            <%  if(session.getAttribute("user")==null || session.getAttribute("user") == "" || session.getAttribute("user") == " " ) 
+          { 
+              response.sendRedirect("caught.jsp"); 
+          } 
+          else 
+         {PreparedStatement ps2 = null;
+              PreparedStatement ps = null;
+String getdpass = null;
+String uname1=request.getParameter("uname");
+String passd1=request.getParameter("passwd");
+ Connection con=DriverManager.getConnection("jdbc:derby://localhost:1527/VAJRA", "superuser", "superuser");
+ ps=con.prepareStatement("SELECT * FROM user_reg WHERE rno= ? ");
+             ps.setString(1, session.getAttribute("user").toString());
+      //preparedStmt.executeUpdate();
+             ResultSet rs1=ps.executeQuery();
+             while(rs1.next())
+             {
+                 if(rs1.getString(9)==null ||rs1.getString(10)==null||rs1.getString(11)==null||rs1.getString(12)==null||rs1.getString(13)==null||rs1.getString(14)==null)
+                 {
+                     out.println("Cannot Remove from a registered event !");
+                 
+                      ps2=con.prepareStatement("SELECT * FROM eventadd");
+                       ResultSet rs2=ps2.executeQuery();
+                       while(rs2.next())
+                       { %>
+                           <tr>
+                               <td><%= rs2.getString(1).toString() %></td>
+                 <td><input type="radio"  name="dlt" value=<%=rs2.getString(1).toString() %> ></td>
+                 </tr>
+<%
+                       }
+                } 
+                 else
+                 {
+                     out.println("Already Registered for 6 Events !!");
+                 }
+                 }
+                      
+         %>
+         <input type="submit">
+            </table></form>
                 
 		</div>
       
@@ -146,7 +189,7 @@ body{
 
     
     
-    
+    <%}%>
     
   </body>
 </html>

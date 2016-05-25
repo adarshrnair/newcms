@@ -3,16 +3,32 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/radar/Desktop/finalproj/newcms/web/adminpro/userpro.html</file>
-            <file>file:/C:/Users/radar/Desktop/finalproj/newcms/web/adminpro/usr_disp.jsp</file>
-            <file>file:/C:/Users/radar/Desktop/finalproj/newcms/web/index.jsp</file>
-            <file>file:/C:/Users/radar/Desktop/finalproj/newcms/web/ADMINEDITOR/index.jsp</file>
-            <file>file:/C:/Users/radar/Desktop/finalproj/newcms/web/filehandler/uploadimage2.jsp</file>
-            <file>file:/C:/Users/radar/Desktop/finalproj/newcms/web/login.jsp</file>
+            <file>file:/C:/Users/radar/Desktop/finalproj/newcms/web/adminpro/eventc/deletor.jsp</file>
             <file>file:/C:/Users/radar/Desktop/finalproj/newcms/web/adminpro/sucessfull_U.jsp</file>
-            <file>file:/C:/Users/radar/Desktop/finalproj/newcms/web/adminpro/user__reg.jsp</file>
-            <file>file:/C:/Users/radar/Desktop/finalproj/newcms/web/filehandler/uploadimage1.jsp</file>
+            <file>file:/C:/Users/radar/Desktop/finalproj/newcms/web/adminpro/index1.jsp</file>
+            <file>file:/C:/Users/radar/Desktop/finalproj/newcms/web/adminpro/create_evt.jsp</file>
+            <file>file:/C:/Users/radar/Desktop/finalproj/newcms/web/adminpro/creator.jsp</file>
+            <file>file:/C:/Users/radar/Desktop/finalproj/newcms/web/adminpro/eventc/create_evt.jsp</file>
+            <file>file:/C:/Users/radar/Desktop/finalproj/newcms/web/caught.jsp</file>
+            <file>file:/C:/Users/radar/Desktop/finalproj/newcms/web/login.jsp</file>
+            <file>file:/C:/Users/radar/Desktop/finalproj/newcms/web/indexeditor.jsp</file>
+            <file>file:/C:/Users/radar/Desktop/finalproj/newcms/web/index1.php</file>
+            <file>file:/C:/Users/radar/Desktop/finalproj/newcms/web/adminpro/resultadd.jsp</file>
+            <file>file:/C:/Users/radar/Desktop/finalproj/newcms/web/adminpro/regview.jsp</file>
+            <file>file:/C:/Users/radar/Desktop/finalproj/newcms/web/adminpro/eventc/successfull.jsp</file>
+            <file>file:/C:/Users/radar/Desktop/finalproj/newcms/web/login.html</file>
+            <file>file:/C:/Users/radar/Desktop/finalproj/newcms/web/adminpro/sucessfull_A.jsp</file>
+            <file>file:/C:/Users/radar/Desktop/finalproj/newcms/web/adminpro/check.html</file>
+            <file>file:/C:/Users/radar/Desktop/finalproj/newcms/web/adminpro/eventadd.jsp</file>
             <file>file:/C:/Users/radar/Desktop/finalproj/newcms/web/adminpro/index.jsp</file>
+            <file>file:/C:/Users/radar/Desktop/finalproj/newcms/web/titleeditor/page1/p1.jsp</file>
+            <file>file:/C:/Users/radar/Desktop/finalproj/newcms/web/titleeditor/page1/page1.jsp</file>
+            <file>file:/C:/Users/radar/Desktop/finalproj/newcms/web/adminpro/usr_disp.jsp</file>
+            <file>file:/C:/Users/radar/Desktop/finalproj/newcms/web/adminpro/user_regd.jsp</file>
+            <file>file:/C:/Users/radar/Desktop/finalproj/newcms/web/adminpro/logout.jsp</file>
+            <file>file:/C:/Users/radar/Desktop/finalproj/newcms/web/adminpro/admin.jsp</file>
+            <file>file:/C:/Users/radar/Desktop/finalproj/newcms/web/filehandler/uploadimage1.jsp</file>
+            <file>file:/C:/Users/radar/Desktop/finalproj/newcms/web/adminpro/viewer.jsp</file>
         </group>
     </open-files>
 </project-private>

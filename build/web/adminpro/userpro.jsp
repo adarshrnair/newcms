@@ -80,8 +80,8 @@ th {
 							
 							<ul>
 <li ><a href="#top" id="top-link" class="skel-layers-ignoreHref"><span class="icon fa-home">Profile</span></a></li>
-<li><a href="./user__reg.jsp" id="portfolio-link" class="skel-layers-ignoreHref" target="_blank"><span class="icon fa-plus">Register Event</span></a></li>
-<li><a href="events.html" id="portfolio-link" class="skel-layers-ignoreHref" target="_blank"><span class="icon fa-pencil"> Events</span>
+<li><a href="user_regd.jsp" id="portfolio-link" class="skel-layers-ignoreHref" target="_blank"><span class="icon fa-plus">Registered Events</span></a></li>
+<li><a href="events.jsp" id="portfolio-link" class="skel-layers-ignoreHref" target="_blank"><span class="icon fa-pencil"> Events</span>
     
     <!--
 <li><a href="eventc/del_evt.html" id="about-link" class="skel-layers-ignoreHref" target="_blank"><span class="icon fa-minus">Delete Event</span></a></li> <li><a href="#contact" id="contact-link" class="skel-layers-ignoreHref" target="_blank"><span class="icon fa-book">Appearence</span></a></li>
